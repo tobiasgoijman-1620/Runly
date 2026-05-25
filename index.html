@@ -227,19 +227,19 @@ footer{position:relative;z-index:10;padding:28px 48px 52px;border-top:0.5px soli
       <div class="fs-title">Dejanos tus datos.<br>Nosotros hacemos el resto.</div>
       <p class="fs-sub">Te contactamos para entender tu negocio y armar el contexto de tu bot. <span>Si no sabés bien qué automatizar, consultanos igual</span> — para eso estamos.</p>
     </div>
-    <div class="form-box">
+    <form class="form-box" action="https://formspree.io/f/tobias.goijman@gmail.com" method="POST">
       <div class="form-grid-2">
-        <div class="fg"><label>NOMBRE</label><input type="text" placeholder="Tu nombre completo"></div>
-        <div class="fg"><label>EMPRESA / NEGOCIO</label><input type="text" placeholder="¿Cómo se llama?"></div>
+        <div class="fg"><label>NOMBRE</label><input type="text" name="nombre" placeholder="Tu nombre completo"></div>
+        <div class="fg"><label>EMPRESA / NEGOCIO</label><input type="text" name="empresa" placeholder="¿Cómo se llama?"></div>
       </div>
       <div class="form-grid-2">
-        <div class="fg"><label>EMAIL</label><input type="email" placeholder="tu@email.com"></div>
-        <div class="fg"><label>WHATSAPP</label><input type="tel" placeholder="+54 9 11 ···"></div>
+        <div class="fg"><label>EMAIL</label><input type="email" name="email" placeholder="tu@email.com"></div>
+        <div class="fg"><label>WHATSAPP</label><input type="tel" name="whatsapp" placeholder="+54 9 11 ···"></div>
       </div>
       <div class="fg-full">
         <div class="fg">
           <label>RUBRO</label>
-          <select>
+          <select name="rubro">
             <option value="">¿En qué sector estás?</option>
             <option>Inmobiliaria / Real estate</option>
             <option>E-commerce / Tienda online</option>
@@ -254,20 +254,20 @@ footer{position:relative;z-index:10;padding:28px 48px 52px;border-top:0.5px soli
       <div class="fg-full">
         <div class="fg">
           <label>¿QUÉ QUERÉS AUTOMATIZAR?</label>
-          <textarea placeholder="Ej: responder consultas de WhatsApp, calificar leads, publicar en Instagram... Si no sabés bien, contanos sobre tu negocio y lo vemos juntos."></textarea>
+          <textarea name="mensaje" placeholder="Ej: responder consultas de WhatsApp, calificar leads, publicar en Instagram... Si no sabés bien, contanos sobre tu negocio y lo vemos juntos."></textarea>
         </div>
       </div>
       <div class="no-idea">
         <div class="no-idea-icon">→</div>
         <p><span>¿No sabés por dónde empezar?</span> No hay problema. Completá igual y en la llamada te mostramos qué procesos de tu negocio se pueden automatizar con IA. La consulta es gratis y sin compromiso.</p>
       </div>
-      <button class="submit-btn">QUIERO MI CONSULTA GRATIS →</button>
+      <button type="submit" class="submit-btn">QUIERO MI CONSULTA GRATIS →</button>
       <div class="form-footer">
         <div class="ff-item"><div class="ff-dot"></div>RESPUESTA EN MENOS DE 24HS</div>
         <div class="ff-item"><div class="ff-dot"></div>SIN COMPROMISO</div>
         <div class="ff-item"><div class="ff-dot"></div>100% GRATIS</div>
       </div>
-    </div>
+    </form>
   </div>
 </section>
 
