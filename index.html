@@ -36,7 +36,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .hero{position:relative;z-index:10;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 48px;text-align:center}
 .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.32em;color:var(--orange);margin-bottom:36px;display:flex;align-items:center;gap:14px;opacity:0;animation:fadeup .8s ease forwards .2s}
 .eline{width:32px;height:0.5px;background:var(--orange)}
-.logo-main{font-family:'Syne',sans-serif;font-weight:900;font-size:clamp(80px,18vw,200px);letter-spacing:-0.04em;line-height:1;position:relative;z-index:2;color:var(--white);text-shadow:0 0 40px rgba(255,69,0,.15),0 0 80px rgba(255,69,0,.08);margin-bottom:28px;opacity:0;animation:fadeup .9s ease forwards .4s,flicker 6s ease-in-out infinite 2s}
+.logo-main{font-family:'Syne',sans-serif;font-weight:900;font-size:clamp(48px,13vw,200px);letter-spacing:-0.04em;line-height:1;position:relative;z-index:2;color:var(--white);text-shadow:0 0 40px rgba(255,69,0,.15),0 0 80px rgba(255,69,0,.08);margin-bottom:28px;opacity:0;animation:fadeup .9s ease forwards .4s,flicker 6s ease-in-out infinite 2s}
 @keyframes flicker{0%,89%,100%{text-shadow:0 0 40px rgba(255,69,0,.15),0 0 80px rgba(255,69,0,.08)}90%{text-shadow:0 0 20px rgba(255,69,0,.4),0 0 60px rgba(255,69,0,.25),0 0 120px rgba(255,69,0,.1)}91%{text-shadow:0 0 10px rgba(255,69,0,.1)}92%{text-shadow:0 0 60px rgba(255,69,0,.5),0 0 120px rgba(255,69,0,.3),0 0 200px rgba(255,69,0,.15)}93%{text-shadow:0 0 40px rgba(255,69,0,.15),0 0 80px rgba(255,69,0,.08)}}
 .glitch-wrap{position:relative;display:inline-block}
 .glitch-wrap::before,.glitch-wrap::after{content:attr(data-text);position:absolute;inset:0;font-family:'Syne',sans-serif;font-weight:900;font-size:inherit;letter-spacing:inherit;line-height:inherit}
@@ -406,6 +406,8 @@ setInterval(()=>{if(Math.random()>.55){bots++;document.getElementById('counter')
 
 /* ── CHAT ENGINE ── */
 
+
+
 const SYSTEM_PROMPT = `Sos el bot de ventas de Runly, una empresa que arma bots de IA para negocios en LATAM.
 Tu único objetivo es responder dudas del cliente y, cuando esté listo, recolectar sus datos de contacto para que el equipo de Runly lo llame.
 
@@ -504,7 +506,7 @@ function disableInput(){
 async function askClaude(userMessage){
   conversationHistory.push({ role:'user', content: userMessage });
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+  const response = await fetch('/.netlify/functions/claude', {
     method:'POST',
     headers:{ 'Content-Type':'application/json' },
     body: JSON.stringify({
